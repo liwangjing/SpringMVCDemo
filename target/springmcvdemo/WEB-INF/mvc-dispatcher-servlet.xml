@@ -8,17 +8,20 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--declare controller current package, and scan the 注解-->
-    <context:component-scan base-package="com.jing"/>  <!--  <context:component-scan base-package="com.jing"/> -->
+    <!--tell Spring where to automatically detect controllers-->
+    <context:component-scan base-package="com.jing"/>
 
     <!-- static resources (js, images...) request-->
     <mvc:default-servlet-handler/>
 
-    <!-- 开启spring mvc annotation mode, as we use annotation to define, we can save many effort -->
+    <!-- 开启spring mvc annotation mode, tell Spring to support annotations like @Controller, @RequestMapping and others that simplify the writing
+    and configuration of controller. as we use annotation to define, we can save many effort -->
     <mvc:annotation-driven/>
 
-    <!-- ViewResolver 试图解析器-->
+    <!-- define a ViewResolver 视图解析器-->
     <!-- used for support Servlet, JSP ViewResolver -->
     <!-- id is the marker for this bean, class is the specific class for this bean-->
+    <!--viewresolver will look for JSPs that match a given view name in the director /WEB-INF/jsp-->
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/WEB-INF/pages/"/>

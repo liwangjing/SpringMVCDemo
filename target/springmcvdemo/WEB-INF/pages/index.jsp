@@ -5,7 +5,10 @@
   Time: 21:05
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %> <!--without this line, the Chinese characters will be garbled-->
+<%@ include file="include.jsp"%>  <!--include the include.jsp file into this file-->
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
@@ -30,6 +33,8 @@
 <h1>This is Spring mvc demo page</h1>
 
 <h2>出现这个页面， 说明配置成功</h2>
+
+<p>Greetings, it is now <c:out value="${now}"/></p>
 
 <!-- jQuery file, must be imported before bootstrap.min.js-->
 <script src ="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
