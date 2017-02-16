@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 /**
  * Created by jing on 2017/1/30.
  */
-@Controller //use 注解to explicitly define this class as Controller that handle request
+@Controller //use annotation to explicitly define this class as Controller that handle request
 public class MainController {
 
     // @RequestMapping 注解， 用于定义一个请求映射
