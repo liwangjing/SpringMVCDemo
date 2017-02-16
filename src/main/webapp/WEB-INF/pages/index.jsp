@@ -34,8 +34,6 @@
 
 <h2>出现这个页面， 说明配置成功</h2>
 
-<p>Greetings, it is now <c:out value="${now}"/></p>
-
 <!-- jQuery file, must be imported before bootstrap.min.js-->
 <script src ="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 
