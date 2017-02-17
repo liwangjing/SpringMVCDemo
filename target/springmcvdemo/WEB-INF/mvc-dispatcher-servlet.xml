@@ -59,6 +59,21 @@
         <property name="basename" value="messages"/>
     </bean>
 
+    <!--<bean name="/priceincrease.htm" class="com.jing.controller.PriceIncreaseFormController">-->
+        <!--<property name="sessionForm" value="true"/>-->
+        <!--<property name="commandName" value="priceIncrease"/>-->
+        <!--<property name="commandClass" value="com.jing.service.PriceIncrease"/>-->
+        <!--<property name="validator">-->
+            <!--<bean class="com.jing.service.PriceIncreaseValidator"/>-->
+        <!--</property>-->
+        <!--<property name="formView" value="priceincrease"/>-->
+        <!--<property name="successView" value="product.htm"/>-->
+        <!--<property name="productManager" ref="productManager"/>-->
+    <!--</bean>-->
+
+    <!--<bean name="validator" class="com.jing.service.PriceIncreaseValidator"/>-->
+
+    <!--Not work for this case-->
     <!--<bean name="/product.htm" class="com.jing.controller.ProductController">-->
         <!--<property name="productManager" ref="productManager"/>-->
     <!--</bean>-->
