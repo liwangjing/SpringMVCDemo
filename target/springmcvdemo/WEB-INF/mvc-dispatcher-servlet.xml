@@ -28,4 +28,39 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!--stub a couple of product instances using spring beans, put data we need as bean entries in this xml file.-->
+    <bean id="productManager" class="com.jing.service.SimpleProductManager">
+        <property name="products">
+            <list>
+                <ref bean="product1"/>
+                <ref bean="product2"/>
+                <ref bean="product3"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="product1" class = "com.jing.domain.Product">
+        <property name="description" value="Lamp"/>
+        <property name="price" value="5.75"/>
+    </bean>
+
+    <bean id="product2" class = "com.jing.domain.Product">
+        <property name="description" value="Table"/>
+        <property name="price" value="35.75"/>
+    </bean>
+
+    <bean id="product3" class = "com.jing.domain.Product">
+        <property name="description" value="Chair"/>
+        <property name="price" value="22.75"/>
+    </bean>
+
+    <bean id="messageSource"
+          class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="messages"/>
+    </bean>
+
+    <!--<bean name="/product.htm" class="com.jing.controller.ProductController">-->
+        <!--<property name="productManager" ref="productManager"/>-->
+    <!--</bean>-->
+
 </beans>

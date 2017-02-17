@@ -1,5 +1,8 @@
 package com.jing.controller;
 
+import com.jing.service.ProductManager;
+import com.mchange.v1.identicator.IdHashMap;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.apache.commons.logging.LogFactory;
 import org.apache.commons.logging.Log;
 import org.springframework.stereotype.Controller;
@@ -8,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by jing on 2017/1/30.
@@ -26,7 +31,7 @@ public class MainController {
     }
 
     @RequestMapping(value="/time", method = RequestMethod.GET)
-    public ModelAndView handleRequest() {
+    public ModelAndView handleTimeRequest() {
         String now = (new Date()).toString();
         logger.info("returning view with " + now);
 
