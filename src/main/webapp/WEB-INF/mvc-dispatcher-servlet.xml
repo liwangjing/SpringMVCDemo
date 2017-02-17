@@ -59,6 +59,7 @@
         <property name="basename" value="messages"/>
     </bean>
 
+    <!--Not work for this case-->
     <!--<bean name="/product.htm" class="com.jing.controller.ProductController">-->
         <!--<property name="productManager" ref="productManager"/>-->
     <!--</bean>-->
