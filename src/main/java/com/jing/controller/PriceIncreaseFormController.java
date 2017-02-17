@@ -42,7 +42,7 @@ public class PriceIncreaseFormController {
 
         if (result.hasErrors()) {
             logger.info("got a error about the percentage");
-            return "priceincrease";
+            return "priceincrease"; //or return "priceincrease.htm". return to 'priceincrease.jsp', .jsp has been added already
         }
         if (manager == null) {
             manager = (ProductManager) context.getBean("productManager");
@@ -54,7 +54,7 @@ public class PriceIncreaseFormController {
         // Validator has succeeded.
         // Perform necessary actions and return to success page.
         logger.info("go to the /product page after the update");
-        return "redirect:product.htm";
+        return "redirect:product"; // or return "redirect:product.htm". redirect to "product.jsp", .jsp has been added already
     }
 
     @RequestMapping(method=RequestMethod.GET)
