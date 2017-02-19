@@ -20,7 +20,7 @@
     <c:out value="${prod.description}"/> <i>$<c:out value="${prod.price}"/> </i><br><br>
 </c:forEach>
 <br>
-<!--add a clickable component here, click the "increse price", would go to the 'priceincrease.jsp'-->
+<!--add a clickable component here, click the "increase price", would go to the 'priceincrease.jsp'-->
 <a href="<c:url value="/priceincrease.htm"/> ">Increase Price</a>
 
 </body>

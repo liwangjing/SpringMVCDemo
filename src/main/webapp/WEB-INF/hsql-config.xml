@@ -1,0 +1,62 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://www.springframework.org/schema/jdbc
+        http://www.springframework.org/schema/jdbc/spring-jdbc-4.1.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+
+    <jdbc:embedded-database id="dataSource" type="HSQL">
+        <jdbc:script location="classpath:db/sql/create_products.sql" />
+        <jdbc:script location="classpath:db/sql/load_data.sql" />
+    </jdbc:embedded-database>
+
+    <bean id="productDao" class="com.jing.repository.SimpleProductDao">
+        <property name="namedParameterJdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+
+    <bean id="productManager" class="com.jing.service.SimpleProductManager">
+        <property name="productDao" ref="productDao"/>
+    </bean>
+
+    <bean id="jdbcTemplate"
+          class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate" >
+        <constructor-arg ref="dataSource" />
+    </bean>
+
+    <!--<bean depends-on="dataSource"-->
+          <!--class="org.springframework.beans.factory.config.MethodInvokingBean">-->
+        <!--<property name="targetClass" value="org.hsqldb.util.DatabaseManagerSwing" />-->
+        <!--<property name="targetMethod" value="main" />-->
+        <!--<property name="arguments">-->
+            <!--<list>-->
+                <!--<value>&#45;&#45;url</value>-->
+                <!--<value>jdbc:derby:memory:dataSource</value>-->
+                <!--<value>&#45;&#45;user</value>-->
+                <!--<value>"root"</value>-->
+                <!--<value>&#45;&#45;password</value>-->
+                <!--<value>"0000"</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+
+
+
+<!--
+    <bean id="dbcpDataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+          destroy-method="close">
+    <property name="driverClassName" value="org.hsqldb.jdbcDriver" />
+    <property name="url" value="jdbc:hsqldb:mem:dataSource" />
+    <property name="username" value="root" />
+    <property name="password" value="0000" />
+    </bean>
+    -->
+
+</beans>

@@ -21,6 +21,10 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
   <!-- these filters are set for chinese character-->
   <filter>
     <filter-name>encodingFilter</filter-name>
