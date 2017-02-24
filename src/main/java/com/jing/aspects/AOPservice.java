@@ -1,4 +1,4 @@
-package com.jing.service;
+package com.jing.aspects;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

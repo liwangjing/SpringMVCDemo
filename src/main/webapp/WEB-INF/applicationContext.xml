@@ -22,7 +22,7 @@
         <property name="productDao" ref="productDao"/>
     </bean>
 
-    <bean id="aopService" class="com.jing.service.AOPservice">
+    <bean id="aopService" class="com.jing.aspects.AOPservice">
         <constructor-arg value="#{T(System).out}"/>
     </bean>
 
@@ -44,5 +44,13 @@
 
         </aop:aspect>
     </aop:config>
+
+    <!--configuration for StorageDummy-->
+
+    <!--enable the AspectJ auto-proxying-->
+    <aop:aspectj-autoproxy/>
+    <bean class = "com.jing.aspects.StorageDummy">
+        <constructor-arg value="#{T(System).out}"/>
+    </bean>
 
 </beans>
