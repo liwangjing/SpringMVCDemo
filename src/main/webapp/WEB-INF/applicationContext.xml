@@ -12,6 +12,8 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <import resource="hsql-config.xml"/>
+
     <!-- the parent application context definition for the spring app application-->
     <bean id="productDao" class="com.jing.repository.SimpleProductDao">
         <!--<property name="dataSource" ref="dataSource"/>-->

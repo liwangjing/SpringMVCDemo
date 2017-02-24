@@ -22,8 +22,8 @@ import java.util.Map;
 public class ProductController {
     protected final Log logger = LogFactory.getLog(getClass());
 
-    @Autowired
-    private ApplicationContext context;
+//    @Autowired
+//    private ApplicationContext context;
 
     @Autowired
     private ProductManager productManager;

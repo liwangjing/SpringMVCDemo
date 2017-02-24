@@ -17,13 +17,13 @@
         <jdbc:script location="classpath:db/sql/load_data.sql" />
     </jdbc:embedded-database>
 
-    <bean id="productDao" class="com.jing.repository.SimpleProductDao">
-        <property name="namedParameterJdbcTemplate" ref="jdbcTemplate"/>
-    </bean>
+    <!--<bean id="productDao" class="com.jing.repository.SimpleProductDao">-->
+        <!--<property name="namedParameterJdbcTemplate" ref="jdbcTemplate"/>-->
+    <!--</bean>-->
 
-    <bean id="productManager" class="com.jing.service.SimpleProductManager">
-        <property name="productDao" ref="productDao"/>
-    </bean>
+    <!--<bean id="productManager" class="com.jing.service.SimpleProductManager">-->
+        <!--<property name="productDao" ref="productDao"/>-->
+    <!--</bean>-->
 
     <bean id="jdbcTemplate"
           class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate" >

@@ -27,8 +27,10 @@
     <!--disable this line, stop using prepared products-->
     <!--<import resource="product-config.xml"/>-->
 
-    <!--hsql database configuration-->
-    <import resource="hsql-config.xml"/>
+    <!--&lt;!&ndash;hsql database configuration&ndash;&gt;-->
+    <!--<import resource="hsql-config.xml"/>-->
+
+    <import resource="applicationContext.xml"/>
 
 
     <!-- define a ViewResolver 视图解析器-->
