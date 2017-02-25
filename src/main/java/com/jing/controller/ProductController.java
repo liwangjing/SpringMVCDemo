@@ -33,17 +33,13 @@ public class ProductController {
         String now = (new Date()).toString();
         logger.info("returning view with " + now);
 
-        for (Product product : productManager.getProducts()) {
+        for (Product product : this.productManager.getProducts()) {
             logger.info("product is : " + product.toString());
         }
 
         Map<String, Object> myModel = new HashMap<String, Object>();
         myModel.put("now", now);
         myModel.put("products", this.productManager.getProducts());
-
-        for (Product pro : productManager.getProducts()) {
-            logger.info("show Product: " + pro.toString());
-        }
 
         return new ModelAndView("product", "model", myModel);
     }

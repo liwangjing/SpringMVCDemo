@@ -3,6 +3,7 @@ package com.jing.aspects;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 
 import java.io.PrintStream;
@@ -35,6 +36,18 @@ public class StorageDummy {
         stream.println("get the Products, close the storage");
         logger.info("get the Products, close the storage");
     }
+
+    // Around is not working right now. it said productManager is not found...
+//    @Around("getProducts()")
+//    public void greetings(ProceedingJoinPoint joinPoint) {
+//        try {
+//            stream.println("Hello, welcome to the storage");
+//            joinPoint.proceed();
+//            stream.println("Thank you for coming, Bye~~ ");
+//        } catch (Throwable throwable) {
+//            stream.println("??? what's wrong");
+//        }
+//    }
 
     @Before("execution(* com.jing.repository.SimpleProductDao.saveProduct(..))")
     public void openStorageDoor() {
