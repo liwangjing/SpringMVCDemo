@@ -38,6 +38,9 @@
                     pointcut-ref="increase"
                     method="after"/>
 
+            <!--<aop:around pointcut-ref="increase"-->
+                    <!--method="greetings"/>-->
+
             <aop:after
                     pointcut="execution(* *com.jing.service.SimpleProductManager.increasePrice(..))"
                     method="finish"/>

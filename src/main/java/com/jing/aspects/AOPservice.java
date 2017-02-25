@@ -2,6 +2,7 @@ package com.jing.aspects;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.aspectj.lang.ProceedingJoinPoint;
 
 import java.io.PrintStream;
 
@@ -31,5 +32,15 @@ public class AOPservice {
     public void finish () {
         stream.println("!!!!! Finish");
         logger.info("in AOP finish method");
+    }
+
+    public void greetings(ProceedingJoinPoint joinPoint) {
+        try {
+            stream.println("hello AOP");
+            joinPoint.proceed();
+            stream.println("bye bye AOP");
+        } catch (Throwable e) {
+            e.toString();
+        }
     }
 }
