@@ -34,13 +34,10 @@ public class AOPService {
         logger.info("in AOP finish method");
     }
 
-    public void greetings(ProceedingJoinPoint joinPoint) {
-        try {
-            stream.println("hello AOP");
-            joinPoint.proceed();
-            stream.println("bye bye AOP");
-        } catch (Throwable e) {
-            e.toString();
-        }
+    public Object greetings(ProceedingJoinPoint joinPoint) throws Throwable {
+        stream.println("hello AOP");
+        Object object = joinPoint.proceed();
+        stream.println("bye bye AOP");
+        return object;
     }
 }

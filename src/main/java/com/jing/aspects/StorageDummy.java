@@ -38,16 +38,13 @@ public class StorageDummy {
     }
 
     // Around is not working right now. it said productManager is not found...
-//    @Around("getProducts()")
-//    public void greetings(ProceedingJoinPoint joinPoint) {
-//        try {
-//            stream.println("Hello, welcome to the storage");
-//            joinPoint.proceed();
-//            stream.println("Thank you for coming, Bye~~ ");
-//        } catch (Throwable throwable) {
-//            stream.println("??? what's wrong");
-//        }
-//    }
+    @Around("getProducts()")
+    public Object greetings(ProceedingJoinPoint joinPoint) throws  Throwable{
+        stream.println("Hello, welcome to the storage");
+        Object obj = joinPoint.proceed();
+        stream.println("Thank you for coming, Bye~~ ");
+        return obj;
+    }
 
     @Before("execution(* com.jing.repository.SimpleProductDao.saveProduct(..))")
     public void openStorageDoor() {

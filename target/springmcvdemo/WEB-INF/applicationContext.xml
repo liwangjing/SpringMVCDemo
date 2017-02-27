@@ -22,7 +22,7 @@
         <property name="productDao" ref="productDao"/>
     </bean>
 
-    <bean id="aopService" class="com.jing.aspects.AOPservice">
+    <bean id="aopService" class="com.jing.aspects.AOPService">
         <constructor-arg value="#{T(System).out}"/>
     </bean>
 
