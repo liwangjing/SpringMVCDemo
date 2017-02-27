@@ -9,11 +9,11 @@ import java.io.PrintStream;
 /**
  * Created by jing on 2017/2/23.
  */
-public class AOPservice {
+public class AOPService {
 
     private PrintStream stream;
 
-    public AOPservice(PrintStream stream) {
+    public AOPService(PrintStream stream) {
         this.stream = stream;
     }
 
