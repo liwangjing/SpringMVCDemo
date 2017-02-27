@@ -10,5 +10,7 @@ import java.util.List;
 public interface ProductDao {
     public List<Product> getProducts();
 
+    public void updateProduct(Product product);
+
     public void saveProduct(Product product);
 }

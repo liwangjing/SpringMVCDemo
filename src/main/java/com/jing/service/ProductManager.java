@@ -10,4 +10,6 @@ import java.util.List;
 public interface ProductManager extends Serializable {
     public void increasePrice(int percentage);
     public List<Product> getProducts();
+    public void updateProduct(Product product);
+    public void saveProduct(Product product);
 }

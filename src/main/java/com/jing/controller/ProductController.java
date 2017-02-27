@@ -5,7 +5,6 @@ import com.jing.service.ProductManager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,10 +31,6 @@ public class ProductController {
     public ModelAndView handleProductRequest() {
         String now = (new Date()).toString();
         logger.info("returning view with " + now);
-
-        for (Product product : this.productManager.getProducts()) {
-            logger.info("product is : " + product.toString());
-        }
 
         Map<String, Object> myModel = new HashMap<String, Object>();
         myModel.put("now", now);

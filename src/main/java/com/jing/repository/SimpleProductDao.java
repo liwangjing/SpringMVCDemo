@@ -50,12 +50,17 @@ public class SimpleProductDao implements ProductDao {
     }
 
     @Override
-    public void saveProduct(Product product) {
+    public void updateProduct(Product product) {
         logger.info("SimpleProductDao, saveProducts()");
         Long id = product.getId();
         double price = product.getPrice();
         namedParameterJdbcTemplate.update("update products set PRICE = :price where ID = :id"
                 , new MapSqlParameterSource("id", id).addValue("price", price));
+
+    }
+
+    @Override
+    public void saveProduct(Product product) {
 
     }
 

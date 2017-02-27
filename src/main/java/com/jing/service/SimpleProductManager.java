@@ -1,6 +1,7 @@
 package com.jing.service;
 
 import com.jing.domain.Product;
+import com.jing.repository.HibernateProductDao;
 import com.jing.repository.ProductDao;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -23,9 +24,19 @@ public class SimpleProductManager implements ProductManager {
             for (Product product : products) {
                 double newPrice = product.getPrice().doubleValue() * (100 + percentage) / 100;
                 product.setPrice(newPrice);
-                productDao.saveProduct(product);
+                productDao.updateProduct(product);
             }
         }
+    }
+
+    public void updateProduct(Product product) {
+        logger.info("update product");
+        productDao.updateProduct(product);
+    }
+
+    public void saveProduct(Product product) {
+        logger.info("save product");
+        productDao.saveProduct(product);
     }
 
     @Override

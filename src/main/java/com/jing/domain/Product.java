@@ -1,16 +1,29 @@
 package com.jing.domain;
 
-import org.hibernate.annotations.Table;
-
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * Created by jing on 2017/2/16.
  */
+@Entity
+@Table(name = "products")
 public class Product implements Serializable {
     private String description;
     private Double price;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    public Product () {
+
+    }
+    public Product(Long id, Double price, String description) {
+        this.id = id;
+        this.price = price;
+        this.description = description;
+    }
 
     public Long getId() {
         return this.id;
