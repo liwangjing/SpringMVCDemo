@@ -17,7 +17,7 @@ public class SimpleProductManager implements ProductManager {
 
     @Override
     public void increasePrice(int percentage) {
-        logger.info("SimplrProductManager, increasePrice()");
+        logger.info("SimpleProductManager, increasePrice()");
         List<Product> products = productDao.getProducts();
         if (products != null) {
             for (Product product : products) {
