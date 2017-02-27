@@ -20,6 +20,7 @@ import java.util.Objects;
 
 /**
  * Created by jing on 2017/2/18.
+ * This ProductDao is based on JDBC, and take usage of NamedParameterJdbcTemplate.
  */
 
 @Repository("productDao")
